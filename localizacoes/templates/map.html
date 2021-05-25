@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Net21</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    </head>
+    <header>
+    <body>
+        <h1> Example Django + Postgis + Leatlet </h1>
+        <div id='m' style='width: 1920px; height: 1080px'></div>
+
+        <!-- add js here-->
+        <script type='text/javascript'>
+            var m = L.map('m').setView([-7.1283946703750765, -34.86398070745317], 11);
+
+            L.tileLayer('//{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(m);
+
+            {%for e in point_list%}
+                L.marker({{e.lat_log}}).addTo(m).bindPopup ('{{e}}');
+            {% endfor %}
+        </script>
+    </body> 
+</html>

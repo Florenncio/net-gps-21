@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid">
+    <div class="card">
+
+        <div class="card-header">
+            <h4>Clientes</h4>
+        </div>
+
+        <div class='card-body'>
+            <div class='table-responsive'>
+                <table class='table table-striped table-sm'>
+                    <thead>
+                        <tr>
+                            <th scope='col'>#</th>
+                            <th scope='col'>Nome</th>
+                            <th scope='col'>Telefone</th>
+                            <th scope='col'>Celular</th>
+                            <th scope='col'>Email</th>
+                            <th scope='col'>Cidade</th>
+                            <th scope='col'>Bairro</th>
+                            <th scope='col'>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            {% for cliente in cliente_list %}
+                                <tr>
+                                    <td scope='row'>{{ cliente.pk}}</td>
+                                    <td >{{ cliente.nome_cli}}</td>
+                                    <td>{{ cliente.tell_cli}}</td>
+                                    <td>{{ cliente.cell_cli}}</td>
+                                    <td>{{ cliente.email_cli}}</td>
+                                    <td>{{ cliente.cidade_cli}}</td>
+                                    <td>{{ cliente.bairro_cli}}</td>
+                                    <td>
+                                        <ul class='list-group list-group-horizontal-sm'>
+                                            <li class='list-group-item'><a type="button" href="{% url 'update-cliente' cliente.pk %}" class="btn btn-dark btn-sm bi bi-pencil"></a></li>
+                                            <li class='list-group-item'><a type="button" href="{% url 'detail-cliente' cliente.pk %}" class="btn btn-dark btn-sm bi bi-eye"></a></li>
+                                            <li class='list-group-item'><a type="button" href="{% url 'delete-cliente' cliente.pk %}" class="btn btn-dark btn-sm bi bi-trash"></a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </div>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}   

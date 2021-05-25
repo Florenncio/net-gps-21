@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+                <h4>Cadastro de Cliente</h4>
+            </div>
+            <div class="card-body">
+                <form method="post">{% csrf_token %}
+                    <div class="row row-cols-2">
+                        <div class="p-3">
+                            <label clas="form-label">Nome</label>
+                            {{form.nome_cli|add_class:"form-control"}}
+                        </div>
+                        <div class="p-3">
+                            <label clas="form-label">Tipo de Pessoa</label>
+                            {{form.tip_pessoa_cli|add_class:"form-control"}}
+                        </div>
+                    </div>
+                     
+                    <div class="row row-cols-2"> 
+                        <div class="mb-3">
+                            <label clas="form-label">Email</label>
+                            {{form.email_cli|add_class:"form-control"}}
+                        </div>
+                        <div class="mb-3">
+                            <label clas="form-label">Email 2</label>
+                            {{form.email2_cli|add_class:"form-control"}}
+                        </div>
+                    </div>
+                    
+                    <div class="row row-cols-2"> 
+                        <div class="mb-3">
+                            <label clas="form-label">Celular</label>
+                            {{form.cell_cli|add_class:"form-control"}}
+                        </div>
+                        <div class="mb-3">
+                            <label clas="form-label">Celular 2</label>
+                            {{form.cell2_cli|add_class:"form-control"}}
+                        </div>
+                    </div>
+
+                    <div class="row row-cols-2"> 
+                        <div class="mb-3">
+                            <label clas="form-label">Telefone</label>
+                            {{form.tell_cli|add_class:"form-control"}}
+                        </div>
+                        <div class="mb-3">
+                            <label clas="form-label">CPF</label>
+                            {{form.cgc_cli|add_class:"form-control"}}
+                        </div>
+                    </div>
+
+                    <div class="row row-cols-2"> 
+                        <div class="mb-3">
+                            <label clas="form-label">CEP</label>
+                            {{form.cep_cli|add_class:"form-control"}}
+                        </div>
+                        <div class="mb-3">
+                            <label clas="form-label">CNPJ</label>
+                            {{form.cnpj_cli|add_class:"form-control"}}
+                        </div>
+                    </div>
+
+                    <div class="row row-cols-2"> 
+                        <div class="mb-3">
+                            <label clas="form-label">UF</label>
+                            {{form.uf_cli|add_class:"form-control"}}
+                        </div>
+                        <div class="mb-3">
+                            <label clas="form-label">Cidade</label>
+                            {{form.cidade_cli|add_class:"form-control"}}
+                        </div>
+                    </div>
+
+                    <div class="row row-cols-2"> 
+                        <div class="mb-3">
+                            <label clas="form-label">Bairro</label>
+                            {{form.bairro_cli|add_class:"form-control"}}
+                        </div>
+                        <div class="mb-3">
+                            <label clas="form-label">Endereço</label>
+                            {{form.endereco_cli|add_class:"form-control"}}
+                        </div>
+                    </div>
+
+                    <div class="row row-cols-2"> 
+                        <div class="mb-3">
+                            <label clas="form-label">Número</label>
+                            {{form.num_cli|add_class:"form-control"}}
+                        </div>
+                        <div class="mb-3">
+                            <label clas="form-label">Complemento</label>
+                            {{form.comp_cli|add_class:"form-control"}}
+                        </div>
+                    </div>
+                    
+                    <div class="">
+                        <button type="submit" value="Submit" class="btn btn-success"><i class="bi bi-check-lg"> Salvar</i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

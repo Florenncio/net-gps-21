@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row"></div>
+    <br />
+    <div class="row">
+        <div class="col-md-2 col-xs-2 col-sm-2"></div>
+        <div class="col-md-10 col-xs-10 col-sm-10">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="alert alert-warning">
+                        Tem certeza que deseja excluir {{ object }}?
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success">Sim</button>
+                <a type="submit" href="{% url 'list-cliente' %}" class="btn btn-danger">Não</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
